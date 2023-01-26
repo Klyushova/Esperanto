@@ -18,9 +18,10 @@ public class MainActivity extends AppCompatActivity {
 
         binding.word.setOnClickListener(view ->
             startActivity(MenuWord.newInstance( this)));
+        binding.textAndritten.setOnClickListener(view ->
+                startActivity(Texti.newInstance( this)));
         binding.grammar.setOnClickListener(view ->
                 startActivity(Grammari.newInstance( this)));
-        binding.textAndritten.setOnClickListener(view -> startActivity(Texti.newInstance(this)));
     }
 
 }
