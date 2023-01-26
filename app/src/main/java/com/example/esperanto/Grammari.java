@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.esperanto.databinding.GrammariMenuBinding;
+import com.example.esperanto.databinding.GliBinding;
 
 
 public class Grammari extends AppCompatActivity {
-    private GrammariMenuBinding binding;
+    private GliBinding binding;
 
     public static Intent newInstance(Context context) {
         return new Intent(context, MenuWord.class);
@@ -18,8 +18,14 @@ public class Grammari extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = GrammariMenuBinding.inflate(getLayoutInflater());
+        binding = GliBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+
+        binding.getRoot().setOnClickListener(v -> finish());
+        setContentView(binding.getRoot());
+
+
     }
+    
 }

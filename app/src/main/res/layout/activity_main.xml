@@ -22,4 +22,5 @@
         android:id="@+id/textAndritten"
         android:text="Чтение и тексты"
         android:gravity="center"/>
+
 </LinearLayout>

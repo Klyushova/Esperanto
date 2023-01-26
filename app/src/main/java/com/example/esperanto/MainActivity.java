@@ -23,5 +23,4 @@ public class MainActivity extends AppCompatActivity {
         binding.textAndritten.setOnClickListener(view -> startActivity(Texti.newInstance(this)));
     }
 
-
 }
