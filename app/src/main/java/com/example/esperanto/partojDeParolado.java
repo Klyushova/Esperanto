@@ -32,6 +32,7 @@ public class partojDeParolado extends AppCompatActivity {
                 "е) Неопределенное наклонение - i (fari - делать). \n" +
                 "Наречия оканчиваются на е. \n" +
                 "Прилагательное всегда оканчивается на а.");
+        binding.tasko.setOnClickListener(view -> startActivity(FirstTasto.newInstance( this)));
 
     }
 }

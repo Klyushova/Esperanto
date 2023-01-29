@@ -79,7 +79,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".Tasto1"
+            android:name=".FirstTasto"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
