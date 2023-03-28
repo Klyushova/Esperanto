@@ -1,21 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout   xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:gravity="top">
+    android:gravity="fill|top"
+    android:orientation="horizontal">
 
-    <TextView
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="top"
-        android:rotationX="-4"
-        android:text="Темы" />
-    <Button
-        android:id="@+id/button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:text="Назад" />
+        android:orientation="vertical">
+
+        <Button
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:text="Семья" />
+
+        <Button
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:text="продукты" />
+
+        <Button
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:text="школа" />
+
+        <Button
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:text="предметы" />
+
+        <Button
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:text="животные" />
+
+        <Button
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:text="Цвета" />
+
+        <Button
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:text="мебель" />
+
+        <Button
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:text="школа" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:text="основные глаголы" />
+
+        <Button
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:text="погода" />
+
+        <Button
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:text="одежда" />
+
+        <Button
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:text="прилагательные" />
+
+        <Button
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:text="спорт" />
+
+        <Button
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:text="развелечения" />
+
+        <Button
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:text="общественные места" />
+
+        <Button
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:text="эмоции/чувства" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:orientation="horizontal"
+            android:text="Назад" />
+
+    </LinearLayout>
+
 
 </LinearLayout>
