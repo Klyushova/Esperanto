@@ -29,5 +29,9 @@ public class MenuWord extends AppCompatActivity {
                 finish();
             }
         });
+        binding.fam.setOnClickListener(view -> {
+            DatabaseHelp.getAll();
+        });
+
     }
     }

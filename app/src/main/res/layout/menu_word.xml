@@ -14,7 +14,8 @@
             android:layout_width="160dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:text="Семья" />
+            android:text="Семья"
+            android:id="@+id/fam"/>
 
         <Button
             android:layout_width="160dp"
