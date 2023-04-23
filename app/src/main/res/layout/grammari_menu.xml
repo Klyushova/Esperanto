@@ -18,22 +18,74 @@
 
         <Button
             android:id="@+id/chastiRechi"
-            android:layout_width="wrap_content"
+            android:layout_width="323dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Части речи / partoj de parolado"/>
+            android:text="Части речи"/>
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_gravity="center">
         <Button
-            android:layout_width="wrap_content"
+            android:id="@+id/la"
+            android:layout_width="323dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            />
+            android:text="Определённый артикль la" />
+        <Button
+            android:id="@+id/vopross"
+            android:layout_width="323dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Вопросительные слова" />
+
+        <Button
+            android:id="@+id/mestoim"
+            android:layout_width="323dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Местоимения" />
+        <Button
+            android:id="@+id/predl"
+            android:layout_width="323dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Предлоги" />
+        <Button
+            android:id="@+id/chisl"
+            android:layout_width="323dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Числительные" />
+        <Button
+            android:id="@+id/pristv"
+            android:layout_width="323dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Приставки" />
+        <Button
+            android:id="@+id/cyww"
+            android:layout_width="323dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Суффиксы" />
+        <Button
+            android:id="@+id/cow"
+            android:layout_width="323dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Союзы" />
+        <Button
+            android:id="@+id/pade"
+            android:layout_width="323dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Падежи" />
+
+
     </LinearLayout>
     <Button
         android:id="@+id/button"
