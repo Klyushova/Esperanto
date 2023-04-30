@@ -4,37 +4,32 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/result"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:text="0/10"
+        android:layout_gravity="right"/>
+    <TextView
+        android:textSize="22dp"
+        android:textColor="@color/black"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="К какой части речи относится слово?"
+        android:text=""
         android:layout_gravity="center"/>
     <TextView
+        android:textSize="20dp"
+        android:textColor="#000080"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/answertasto"
         android:layout_gravity="center"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/glag"
-        android:text="глагол"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/cuch"
-        android:text="существительное"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/pril"
-        android:text="прилагательное"/>
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/nar"
-        android:text="наречие"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/pravanswer"/>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/lB"
+        android:layout_gravity="center"/>
+
 </LinearLayout>

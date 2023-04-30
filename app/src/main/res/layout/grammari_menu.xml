@@ -78,12 +78,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Союзы" />
-        <Button
-            android:id="@+id/pade"
-            android:layout_width="323dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Падежи" />
+
 
 
     </LinearLayout>

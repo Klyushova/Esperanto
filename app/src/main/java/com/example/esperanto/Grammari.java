@@ -13,7 +13,7 @@ import com.example.esperanto.databinding.GrammariMenuBinding;
 
 public class Grammari extends AppCompatActivity {
     private  GrammariMenuBinding binding;
-    public static String i = "chastiRechi";
+    public static String i;
     public static Intent newInstance(Context context) {
         return new Intent(context, Grammari.class);
     }
@@ -34,6 +34,36 @@ public class Grammari extends AppCompatActivity {
         );
         binding.vopross.setOnClickListener(view ->{
                     i = "vopross";
+                    startActivity(partojDeParolado.newInstance(this));
+                }
+        );
+        binding.mestoim.setOnClickListener(view ->{
+                    i = "mestoim";
+                    startActivity(partojDeParolado.newInstance(this));
+                }
+        );
+        binding.predl.setOnClickListener(view ->{
+                    i = "predl";
+                    startActivity(partojDeParolado.newInstance(this));
+                }
+        );
+        binding.chisl.setOnClickListener(view ->{
+                    i = "chisl";
+                    startActivity(partojDeParolado.newInstance(this));
+                }
+        );
+        binding.pristv.setOnClickListener(view ->{
+                    i = "pristv";
+                    startActivity(partojDeParolado.newInstance(this));
+                }
+        );
+        binding.cyww.setOnClickListener(view ->{
+                    i = "cyww";
+                    startActivity(partojDeParolado.newInstance(this));
+                }
+        );
+        binding.cow.setOnClickListener(view ->{
+                    i = "cow";
                     startActivity(partojDeParolado.newInstance(this));
                 }
         );
