@@ -48,7 +48,13 @@ public class partojDeParolado extends Grammari {
 
 
 
-        binding.tasko.setOnClickListener(view -> startActivity(FirstTasto.newInstance(this)));
+        binding.tasko.setOnClickListener(view -> {
+            if (i == "chastiRechi" || i == "la"){
+            startActivity(FirstTasto.newInstance(this));}
+            else{
+                startActivity(TwoTasto.newInstance(this));}
+
+        });
 
     }
 }

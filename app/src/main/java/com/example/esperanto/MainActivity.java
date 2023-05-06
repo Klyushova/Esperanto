@@ -17,11 +17,20 @@ public class MainActivity extends AppCompatActivity {
 
 
         binding.word.setOnClickListener(view ->
-            startActivity(MenuWord.newInstance( this)));
+                startActivity(
+                        MenuActivity.newIntent(
+                                this,
+                                new ButtonTransition[]{
+                                        new ButtonTransition("Grammar", ButtonTransition.Transition.MENU_GRAMMAR),
+                                        new ButtonTransition("Word", ButtonTransition.Transition.MENU_WORD)
+                                }
+                        )/*MenuWord.newInstance( this))*/
+                )
+        );
         binding.textAndritten.setOnClickListener(view ->
-                startActivity(Texti.newInstance( this)));
+                startActivity(Texti.newInstance(this)));
         binding.grammar.setOnClickListener(view ->
-                startActivity(Grammari.newInstance( this)));
+                startActivity(Grammari.newInstance(this)));
     }
 
 }

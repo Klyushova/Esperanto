@@ -20,11 +20,13 @@ import java.util.Random;
 public class FirstTasto extends Grammari {
     private int TrueResult = 0;
     private FirstTastoBinding binding;
-    private int j  = 0;
+    private int j  = -1;
+    private int resID;
     private String randomC[] = {"patro", "bovo", "koko", "kokoj", "studentoj"};
     private String randomG[] = {"iris", "ami", "estos", "volas", "vivi"};
     private String randomN[] = {"ofte", "sole", "zorgeme", "rapide", "tre"};
     private String randomP[] = {"griza", "longa", "alta", "ronda", "amara"};
+    private ImageView imageView;
 
     private String NotLa[] = {"_ Kopenhago", "_ sinjoro", "_ novembro", "_ Tiu ĉambro", "_ Petro"};
     private String La[] = {"_ itala lingvo", "_ nova domo", "_ bela juna knabo", " Ludoviko _ dek kvara", "Vilgelmo _ Silentema"};
@@ -35,7 +37,7 @@ public class FirstTasto extends Grammari {
     private String mest[][]= {{"я", "mi"}, {"ты", "vi"}, {"ты", "вы"}, {"она", "ŝi"}, {"они", "ili"},
             {"их", "ilia"}, {"наш", "nia"}, {"его", "lia"}, {"мой", "mia"}, {"он", "li"}, {"мы", "ni"}};
 
-    private String Predl[] = {"sub", "inter", "en", "ekster", "apud", "antau", "al", "kun", "dum", "el"};
+    private String Predl[] = {"sub", "inter", "en", "ekster", "apud", "antau", "al", "kun",  "el"}; // потеря dum
 
    private int randompatro;
    private int t = 0;
@@ -59,17 +61,8 @@ public class FirstTasto extends Grammari {
             TascoLa();
             laOrNot();
         }
-        else if(i == "vopross"){
-            TascoVopr();
-            Vopro();
-        }
-        else if(i == "mestoim"){
-            Mest();
-        }
-        else if(i == "predl"){
-            Pred();
 
-        }
+
 
 
     }
@@ -196,43 +189,6 @@ public class FirstTasto extends Grammari {
         });
     }
 
-    private  void TascoVopr(){
-        t +=1;
-        if (t > 10){
-            binding.lB.setVisibility(View.GONE);
-            binding.answertasto.setText("Урок пройден");
-        }
-        else {
-            Random random = new Random();
-            int randomWord = random.nextInt(9 - 0) + 0;
-            binding.answertasto.setText(valueOf(Vopross[randomWord][0]));
-            answerVo = Vopross[randomWord][1];
-
-
-        }
-    }
-    private void Vopro(){
-        LinearLayout ll = (LinearLayout)findViewById(R.id.lB);
-        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT);
-        EditText editVo = new EditText(this);
-        ll.addView(editVo, params);
-        Button btprover = new Button(this);
-        btprover.setText("Проверить");
-        ll.addView(btprover, params);
-        btprover.setOnClickListener(view -> {
-            String editi = editVo.getText().toString();
-            if(editi.equals(answerVo)){
-                TrueResult += 1;
-            }
-            editVo.getText().clear();
-            TascoVopr();
-        });
-
-
-
-    }
     private void inLay(){
         LinearLayout ll = (LinearLayout)findViewById(R.id.lB);
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
@@ -270,20 +226,29 @@ public class FirstTasto extends Grammari {
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT);
-        ImageView imageView = new ImageView(this);
-        ll.addView(imageView, params);
         EditText editVo = new EditText(this);
         ll.addView(editVo, params);
         Button btprover = new Button(this);
         btprover.setText("Проверить");
         ll.addView(btprover, params);
-        int resID = getResources().getIdentifier(Predl[8], "drawable", getPackageName());
-        imageView.setImageResource(resID);
+        resID = getResources().getIdentifier(Predl[j], "drawable", getPackageName());
+        binding.image.setImageResource(resID);
+        answerVo = Predl[j];
         btprover.setOnClickListener(view -> {
             String editi = editVo.getText().toString();
             if(editi.equals(answerVo)){
                 TrueResult += 1;
-                Nopred();
+                binding.result.setText("" + TrueResult + "/ 9");
+                if (j > 7){
+                    binding.lB.setVisibility(View.GONE);
+                    binding.answertasto.setText("Урок пройден");
+                }
+                else{
+                    j ++;
+                    resID = getResources().getIdentifier(Predl[j], "drawable", getPackageName());
+                    binding.image.setImageResource(resID);
+
+                }
 
             }
             editVo.getText().clear();
@@ -291,19 +256,5 @@ public class FirstTasto extends Grammari {
 
 
     }
-    private void Nopred(){
-        t ++;
-        if (t > 10){
-            binding.lB.setVisibility(View.GONE);
-            binding.answertasto.setText("Урок пройден");
-        }
-        else{
-            j ++;
-            Pred();
-        }
-    }
-
-
-
 
 }
