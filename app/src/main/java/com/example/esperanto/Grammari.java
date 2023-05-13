@@ -23,47 +23,47 @@ public class Grammari extends AppCompatActivity {
         binding = GrammariMenuBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         binding.chastiRechi.setOnClickListener(view ->{
-                    i = "chastiRechi";
+                    i = TextGrammar.PARTOY;
                     startActivity(partojDeParolado.newInstance(this));
                 }
                 );
         binding.la.setOnClickListener(view ->{
-                    i = "la";
+                    i = TextGrammar.LA;
                     startActivity(partojDeParolado.newInstance(this));
                 }
         );
         binding.vopross.setOnClickListener(view ->{
-                    i = "vopross";
+                    i = TextGrammar.VOPROSS;
                     startActivity(partojDeParolado.newInstance(this));
                 }
         );
         binding.mestoim.setOnClickListener(view ->{
-                    i = "mestoim";
+                    i = TextGrammar.MESTOIM;
                     startActivity(partojDeParolado.newInstance(this));
                 }
         );
         binding.predl.setOnClickListener(view ->{
-                    i = "predl";
+                    i = TextGrammar.PREDL;
                     startActivity(partojDeParolado.newInstance(this));
                 }
         );
         binding.chisl.setOnClickListener(view ->{
-                    i = "chisl";
+                    i = TextGrammar.CHISL;
                     startActivity(partojDeParolado.newInstance(this));
                 }
         );
         binding.pristv.setOnClickListener(view ->{
-                    i = "pristv";
+                    i = TextGrammar.PRISTV;
                     startActivity(partojDeParolado.newInstance(this));
                 }
         );
         binding.cyww.setOnClickListener(view ->{
-                    i = "cyww";
+                    i = TextGrammar.CYWW;
                     startActivity(partojDeParolado.newInstance(this));
                 }
         );
         binding.cow.setOnClickListener(view ->{
-                    i = "cow";
+                    i = TextGrammar.COW;
                     startActivity(partojDeParolado.newInstance(this));
                 }
         );

@@ -18,37 +18,15 @@ public class partojDeParolado extends Grammari {
         super.onCreate(savedInstanceState);
         binding = PartojBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        if (i == "chastiRechi") {
-            binding.textParto.setText(TextGrammar.PARTOY);
-        }
-        else if (i == "la") {
-            binding.textParto.setText(TextGrammar.LA);
-        }
-        else if (i == "vopross"){
-            binding.textParto.setText(TextGrammar.VOPROSS);
+            binding.textParto.setText(i);
+
+            binding.tasko.setOnClickListener(view ->{
+            if(i == TextGrammar.LA || i == TextGrammar.PARTOY){
+            startActivity(FirstTasto.newInstance(this)); }
+            else{
+                startActivity(TwoTasto.newInstance(this));
             }
-        else if (i == "mestoim") {
-            binding.textParto.setText(TextGrammar.MESTOIM);
-        }
-        else if (i == "predl") {
-            binding.textParto.setText(TextGrammar.PREDL);
-        }
-        else if (i == "chisl") {
-            binding.textParto.setText(TextGrammar.CHISL);
-        }
-        else if (i == "pristv") {
-            binding.textParto.setText(TextGrammar.PRISTV);
-        }
-        else if (i == "cyww") {
-            binding.textParto.setText(TextGrammar.CYWW);
-        }
-        else if (i == "cow") {
-            binding.textParto.setText(TextGrammar.COW);
-        }
-
-
-
-        binding.tasko.setOnClickListener(view -> startActivity(FirstTasto.newInstance(this)));
+        });
 
     }
 }
