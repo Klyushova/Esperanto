@@ -3,36 +3,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    <LinearLayout
+    <Button
+        android:id="@+id/tasko"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:id="@+id/tasko"
-            android:text="задачи/taskoj"/>
-    </LinearLayout>
+        android:gravity="center"
+        android:text="задачи/taskoj" />
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_gravity="center">
 
-        <ScrollView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center">
         <TextView
-
+            android:id="@+id/textParto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textParto"
-            android:layout_gravity="center"
-            android:textSize="30dp"
-            android:text="hi"/>
-        </ScrollView>
-    </LinearLayout>
+            android:text="hi"
+            android:textSize="30dp" />
+    </ScrollView>
 </LinearLayout>

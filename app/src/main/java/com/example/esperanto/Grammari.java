@@ -13,10 +13,12 @@ import com.example.esperanto.databinding.GrammariMenuBinding;
 
 public class Grammari extends AppCompatActivity {
     private  GrammariMenuBinding binding;
-    public static String i;
+    public String i;
     public static Intent newInstance(Context context) {
         return new Intent(context, Grammari.class);
     }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +70,7 @@ public class Grammari extends AppCompatActivity {
                 }
         );
         Button nexti =(Button)findViewById(R.id.button);
+
 
         nexti.setOnClickListener(new Button.OnClickListener() {
             @Override
