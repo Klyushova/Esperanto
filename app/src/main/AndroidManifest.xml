@@ -54,6 +54,10 @@
             android:name=".Media"
             android:exported="true">
         </activity>
+        <activity
+            android:name=".wordOtobr"
+            android:exported="true">
+        </activity>
 
     </application>
 
