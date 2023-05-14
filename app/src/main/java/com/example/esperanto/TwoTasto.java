@@ -66,32 +66,32 @@ public class TwoTasto extends  Grammari{
 
         else{
             if(i == TextGrammar.VOPROSS){
-            Osnov = Vopross.clone();
-        }
-        else if(i == TextGrammar.MESTOIM){
-           Osnov = Mest.clone();
-        }
-        else if(i == TextGrammar.CHISL){
-            Osnov = Chisl.clone();
+                Osnov = Vopross.clone();
+            }
+            else if(i == TextGrammar.MESTOIM){
+                Osnov = Mest.clone();
+            }
+            else if(i == TextGrammar.CHISL){
+                Osnov = Chisl.clone();
 
-        }
-        else if(i == TextGrammar.PRISTV){
-            Osnov = Pristv.clone();
+            }
+            else if(i == TextGrammar.PRISTV){
+                Osnov = Pristv.clone();
 
-        }
-        else if (i == TextGrammar.COW){
-            Osnov = Cow.clone();
+            }
+            else if (i == TextGrammar.COW){
+                Osnov = Cow.clone();
 
-        }
-        else if(i == TextGrammar.CYWW){
-            Osnov = Cyww.clone();
+            }
+            else if(i == TextGrammar.CYWW){
+                Osnov = Cyww.clone();
 
-        }
+            }
             TascoVopr();
             Vopro();
 
 
-    }}
+        }}
     private  void TascoVopr(){
         t +=1;
         if (t > 10){

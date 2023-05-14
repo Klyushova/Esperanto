@@ -9,6 +9,22 @@
         android:layout_height="wrap_content"
         android:gravity="top"
         android:text="Темы"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/alf"
+        android:text="афлфавит и произношение"/>
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/spinner"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Прочитать"
+        android:id="@+id/proda"/>
+
+
 
     <Button
         android:id="@+id/button"

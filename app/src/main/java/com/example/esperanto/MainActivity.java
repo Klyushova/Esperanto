@@ -16,17 +16,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
 
-        binding.word.setOnClickListener(view ->
-                startActivity(
-                        MenuActivity.newIntent(
-                                this,
-                                new ButtonTransition[]{
-                                        new ButtonTransition("Grammar", ButtonTransition.Transition.MENU_GRAMMAR),
-                                        new ButtonTransition("Word", ButtonTransition.Transition.MENU_WORD)
-                                }
-                        )/*MenuWord.newInstance( this))*/
-                )
-        );
+        binding.word.setOnClickListener(view -> startActivity(MenuWord.newInstance( this)));
         binding.textAndritten.setOnClickListener(view ->
                 startActivity(Texti.newInstance(this)));
         binding.grammar.setOnClickListener(view ->
