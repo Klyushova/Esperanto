@@ -32,6 +32,21 @@ public class MenuWord extends AppCompatActivity {
         binding.fam.setOnClickListener(view -> {
             startActivity(wordOtobr.newInstance(this));
         });
+        binding.produkt.setOnClickListener(view -> {
+            startActivity(wordOtobr.newInstance(this));
+        });
+        binding.animals.setOnClickListener(view -> {
+            startActivity(wordOtobr.newInstance(this));
+        });
+        binding.flowers.setOnClickListener(view -> {
+            startActivity(wordOtobr.newInstance(this));
+        });
+        binding.mebel.setOnClickListener(view -> {
+            startActivity(wordOtobr.newInstance(this));
+        });
+        binding.shool.setOnClickListener(view -> {
+            startActivity(wordOtobr.newInstance(this));
+        });
 
     }
 }

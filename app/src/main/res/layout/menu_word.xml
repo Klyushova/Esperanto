@@ -21,43 +21,43 @@
             android:layout_width="160dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:text="продукты" />
+            android:text="продукты"
+            android:id="@+id/produkt"/>
 
         <Button
             android:layout_width="160dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:text="школа" />
+            android:text="школа"
+            android:id="@+id/shool"/>
 
         <Button
             android:layout_width="160dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:text="предметы" />
+            android:text="предметы"
+            android:id="@+id/predmet"/>
 
         <Button
             android:layout_width="160dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:text="животные" />
+            android:text="животные"
+            android:id="@+id/animals"/>
 
         <Button
             android:layout_width="160dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:text="Цвета" />
+            android:text="Цвета"
+            android:id="@+id/flowers"/>
 
         <Button
             android:layout_width="160dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:text="мебель" />
-
-        <Button
-            android:layout_width="160dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:text="школа" />
+            android:text="мебель"
+            android:id="@+id/mebel"/>
 
 
     </LinearLayout>
@@ -71,49 +71,57 @@
             android:layout_width="160dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:text="основные глаголы" />
+            android:text="основные глаголы"
+            android:id="@+id/glagol"/>
 
         <Button
             android:layout_width="160dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:text="погода" />
+            android:text="погода"
+            android:id="@+id/wether"/>
 
         <Button
             android:layout_width="160dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:text="одежда" />
+            android:text="одежда"
+            android:id="@+id/odet"/>
 
         <Button
             android:layout_width="160dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:text="прилагательные" />
+            android:text="прилагательные"
+            android:id="@+id/pril"/>
 
         <Button
             android:layout_width="160dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:text="спорт" />
+            android:text="спорт"
+            android:id="@+id/sport"/>
 
         <Button
             android:layout_width="160dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:text="развелечения" />
+            android:text="развелечения"
+            android:id="@+id/rathvlech"/>
 
         <Button
             android:layout_width="160dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:text="общественные места" />
+            android:text="общественные места"
+            android:id="@+id/obschestvo"/>
 
         <Button
             android:layout_width="160dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:text="эмоции/чувства" />
+            android:text="эмоции/чувства"
+            android:id="@+id/chyuka"/>
 
         <Button
             android:id="@+id/button"

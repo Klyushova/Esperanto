@@ -41,8 +41,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
         public ViewHolder(View view) {
             super(view);
-            name = view.findViewById(R.id.textViewRu);
-            description = view.findViewById(R.id.textViewES);
+            name = view.findViewById(R.id.textViewES);
+            description = view.findViewById(R.id.textViewRu);
         }
     }
 
