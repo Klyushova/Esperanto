@@ -92,13 +92,6 @@
             android:layout_width="160dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:text="прилагательные"
-            android:id="@+id/pril"/>
-
-        <Button
-            android:layout_width="160dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
             android:text="спорт"
             android:id="@+id/sport"/>
 

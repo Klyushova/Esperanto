@@ -13,14 +13,13 @@ import com.example.esperanto.databinding.RecicleMenuWordBinding;
 import java.util.ArrayList;
 
 public class wordOtobr extends AppCompatActivity {
+    private Context context;
     private RecicleMenuWordBinding binding;
     private RecyclerView wordes;
     private RecyclerView.Adapter adapter;
     private String flag;
-    public String fam[][] = {{"Familio", "Семья"},{"edzo", "муж"}, {"fianĉo", "жених"}, {"patro", "отец"},
-            {"filo", "сын"}, {"frato", "брат"}, {"ĝemeloj", "близнецы"}, {"vicfrato", "сводный брат"},
-            {"orfo", "сирота"}, {"duonpatro", "отчим"}, {"ino", "мачеха"}, {"аvo", "дед"}, {"nepo", "внук"}, {"onklo", "дядя"}, {"nevo", "племянник"},
-            {"kuzo", "двоюродный брат"}, {"parenco", "родственник"}, {"vidvo", "вдовец"}};
+    private String[][] OtobrNabor = MenuWord.WORD.clone();
+
     public static Intent newInstance(Context context) {
         return new Intent(context, wordOtobr.class);
     }
@@ -44,26 +43,26 @@ public class wordOtobr extends AppCompatActivity {
     private ArrayList<word> Wordi() {
         ArrayList<word> list = new ArrayList<>();
 
-        list.add(new word("Familio", "Семья"));
-        list.add(new word("edzo", "муж"));
-        list.add(new word("fianĉo", "жених"));
-        list.add(new word("patro", "отец"));
-        list.add(new word("filo", "сын"));
-        list.add(new word("frato", "брат"));
-        list.add(new word("ĝemeloj", "близнецы"));
-        list.add(new word("vicfrato", "сводный брат"));
-        list.add(new word("orfo", "сирота"));
-        list.add(new word("duonpatro", "отчим"));
-        list.add(new word("ino", "мачеха"));
-        list.add(new word("аvo", "дед"));
-        list.add(new word("nepo", "внук"));
-        list.add(new word("onklo", "дядя"));
-        list.add(new word("nevo", "племянник"));
-        list.add(new word("kuzo", "двоюродный брат"));
-        list.add(new word("parenco", "родственник"));
-        list.add(new word("vidvo", "вдовец"));
-
-
+        list.add(new word(OtobrNabor[0][0], OtobrNabor[0][1]));
+        list.add(new word(OtobrNabor[1][0], OtobrNabor[1][1]));
+        list.add(new word(OtobrNabor[2][0], OtobrNabor[2][1]));
+        list.add(new word(OtobrNabor[3][0], OtobrNabor[3][1]));
+        list.add(new word(OtobrNabor[4][0], OtobrNabor[4][1]));
+        list.add(new word(OtobrNabor[5][0], OtobrNabor[5][1]));
+        list.add(new word(OtobrNabor[6][0], OtobrNabor[6][1]));
+        list.add(new word(OtobrNabor[8][0], OtobrNabor[7][1]));
+        list.add(new word(OtobrNabor[9][0], OtobrNabor[9][1]));
+        list.add(new word(OtobrNabor[10][0], OtobrNabor[10][1]));
+        list.add(new word(OtobrNabor[11][0], OtobrNabor[11][1]));
+        list.add(new word(OtobrNabor[12][0], OtobrNabor[12][1]));
+        list.add(new word(OtobrNabor[13][0], OtobrNabor[13][1]));
+        list.add(new word(OtobrNabor[14][0], OtobrNabor[14][1]));
+        list.add(new word(OtobrNabor[15][0], OtobrNabor[15][1]));
+        list.add(new word(OtobrNabor[16][0], OtobrNabor[16][1]));
+        list.add(new word(OtobrNabor[17][0], OtobrNabor[17][1]));
+        list.add(new word(OtobrNabor[18][0], OtobrNabor[18][1]));
+        list.add(new word(OtobrNabor[19][0], OtobrNabor[19][1]));
         return list;
     }
+
 }

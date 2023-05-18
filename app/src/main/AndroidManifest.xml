@@ -58,6 +58,10 @@
             android:name=".wordOtobr"
             android:exported="true">
         </activity>
+        <activity
+            android:name=".WordTasto"
+            android:exported="true">
+        </activity>
 
     </application>
 
