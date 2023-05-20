@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 import androidx.annotation.Nullable;
 
@@ -97,10 +98,17 @@ public class TwoTasto extends  Grammari{
 
             }
             TascoVopr();
-            Vopro();
-
-
-        }}
+            Vopro();}
+        Button nexti = (Button) findViewById(R.id.button);
+        nexti.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), partojDeParolado.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+    }
     private  void TascoVopr(){
         t +=1;
         if (t > 10){

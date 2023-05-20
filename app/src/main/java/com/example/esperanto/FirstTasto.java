@@ -4,6 +4,7 @@ import static java.lang.String.valueOf;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -28,12 +29,13 @@ public class FirstTasto extends Grammari {
     private String NotLa[] = {"_ Kopenhago", "_ sinjoro", "_ novembro", "_ Tiu ĉambro", "_ Petro"};
     private String La[] = {"_ itala lingvo", "_ nova domo", "_ bela juna knabo", " Ludoviko _ dek kvara", "Vilgelmo _ Silentema"};
 
-
+    private SharedPreferences sharedPreferences;
     private int randompatro;
     private int t = 0;
     private EditText editVo;
     private Button btprover;
     private String answerVo;
+    private static String SHARE = "";
 
     public static Intent newInstance(Context context) {
         return new Intent(context, FirstTasto.class);
@@ -45,17 +47,41 @@ public class FirstTasto extends Grammari {
         binding = FirstTastoBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         if (i == TextGrammar.PARTOY) {
+            SHARE = "PARTOY";
             TastojPartoj();
             onChastiR();
         } else if (i == TextGrammar.LA) {
+            SHARE = "LA";
             TascoLa();
             laOrNot();
         }
+        Button nexti = (Button) findViewById(R.id.button);
+        nexti.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), partojDeParolado.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
     private void TastojPartoj() {
         t += 1;
         if (t > 10) {
+            if (sharedPreferences.contains(SHARE)) {
+                String resultititi = sharedPreferences.getString(SHARE,"");
+                if(TrueResult > Integer.parseInt(resultititi)){
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString(SHARE, String.valueOf(TrueResult));
+                    editor.apply();
+                }
+            }
+            else {
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString(SHARE, String.valueOf(TrueResult));
+                editor.apply();
+            }
             binding.lB.setVisibility(View.GONE);
             binding.answertasto.setText("Урок пройден");
         } else {
@@ -132,6 +158,19 @@ public class FirstTasto extends Grammari {
     private void TascoLa() {
         t += 1;
         if (t > 10) {
+            if (sharedPreferences.contains(SHARE)) {
+                String resultititi = sharedPreferences.getString(SHARE,"");
+                if(TrueResult > Integer.parseInt(resultititi)){
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString(SHARE, String.valueOf(TrueResult));
+                    editor.apply();
+                }
+            }
+            else {
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString(SHARE, String.valueOf(TrueResult));
+                editor.apply();
+            }
             binding.lB.setVisibility(View.GONE);
             binding.answertasto.setText("Урок пройден");
         } else {

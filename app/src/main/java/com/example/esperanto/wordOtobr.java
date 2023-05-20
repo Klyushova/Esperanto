@@ -3,6 +3,8 @@ package com.example.esperanto;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -28,9 +30,19 @@ public class wordOtobr extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = RecicleMenuWordBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        Button nexti = (Button) findViewById(R.id.button);
+        nexti.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MenuWord.class);
+                startActivity(intent);
+                finish();
+            }
+        });
         binding.exesize.setOnClickListener(view -> {
             startActivity(WordTasto.newInstance(this));
         });
+
         ArrayList<word> worldi = Wordi();
         this.wordes = (RecyclerView) findViewById(R.id.word);
             RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this);

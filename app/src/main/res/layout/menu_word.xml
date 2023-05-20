@@ -1,130 +1,215 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="fill|top"
-    android:orientation="horizontal">
+    android:gravity="top"
+    android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:visibility="visible"
+        android:layout_gravity="center"
+        >
+        <androidx.constraintlayout.helper.widget.Layer
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="animals, chyuka, fam, flowers, shool,
+sport, obschestvo, rathvlech, wether, predmet, produkt, odet, glagol"
+            tools:ignore="MissingConstraints" />
+
 
         <Button
+            android:id="@+id/chyuka"
             android:layout_width="160dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="эмоции"
+            app:layout_constraintBottom_toTopOf="@+id/sport"
+            app:layout_constraintEnd_toStartOf="@+id/predmet"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/fam"
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="8dp"
+
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
             android:text="Семья"
-            android:id="@+id/fam"/>
+            app:layout_constraintBottom_toTopOf="@+id/rathvlech"
+            app:layout_constraintEnd_toStartOf="@+id/glagol"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <Button
+            android:id="@+id/rathvlech"
             android:layout_width="160dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:text="продукты"
-            android:id="@+id/produkt"/>
-
-        <Button
-            android:layout_width="160dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:text="школа"
-            android:id="@+id/shool"/>
-
-        <Button
-            android:layout_width="160dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:text="предметы"
-            android:id="@+id/predmet"/>
-
-        <Button
-            android:layout_width="160dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:text="животные"
-            android:id="@+id/animals"/>
-
-        <Button
-            android:layout_width="160dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:text="Цвета"
-            android:id="@+id/flowers"/>
-
-        <Button
-            android:layout_width="160dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:text="мебель"
-            android:id="@+id/mebel"/>
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <Button
-            android:layout_width="160dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:text="основные глаголы"
-            android:id="@+id/glagol"/>
-
-        <Button
-            android:layout_width="160dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:text="погода"
-            android:id="@+id/wether"/>
-
-        <Button
-            android:layout_width="160dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:text="одежда"
-            android:id="@+id/odet"/>
-
-        <Button
-            android:layout_width="160dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:text="спорт"
-            android:id="@+id/sport"/>
-
-        <Button
-            android:layout_width="160dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
             android:text="развелечения"
-            android:id="@+id/rathvlech"/>
+            app:layout_constraintBottom_toTopOf="@+id/shool"
+            app:layout_constraintEnd_toStartOf="@+id/mebel"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <Button
+            android:id="@+id/wether"
             android:layout_width="160dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:text="общественные места"
-            android:id="@+id/obschestvo"/>
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="погода"
+            app:layout_constraintBottom_toTopOf="@+id/obschestvo"
+            app:layout_constraintStart_toEndOf="@+id/shool" />
 
         <Button
+            android:id="@+id/sport"
             android:layout_width="160dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            android:text="эмоции/чувства"
-            android:id="@+id/chyuka"/>
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="спорт"
+            app:layout_constraintBottom_toTopOf="@+id/fam"
+            app:layout_constraintEnd_toStartOf="@+id/odet"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/odet"
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="одежда"
+
+            app:layout_constraintBottom_toTopOf="@+id/glagol"
+            app:layout_constraintStart_toEndOf="@+id/sport" />
+
+        <Button
+            android:id="@+id/glagol"
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="глаголы"
+            app:layout_constraintBottom_toTopOf="@+id/mebel"
+            app:layout_constraintStart_toEndOf="@+id/fam" />
+
+        <Button
+            android:id="@+id/mebel"
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="мебель"
+            app:layout_constraintBottom_toTopOf="@+id/wether"
+            app:layout_constraintStart_toEndOf="@+id/rathvlech" />
+
+        <Button
+            android:id="@+id/shool"
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="школа"
+            app:layout_constraintBottom_toTopOf="@+id/flowers"
+            app:layout_constraintEnd_toStartOf="@+id/wether"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/produkt"
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:text="продукты"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/animals" />
+
+        <Button
+            android:id="@+id/predmet"
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:text="предметы"
+            app:layout_constraintBottom_toTopOf="@+id/odet"
+            app:layout_constraintStart_toEndOf="@+id/chyuka"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/obschestvo"
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="город"
+            app:layout_constraintBottom_toTopOf="@+id/produkt"
+            app:layout_constraintStart_toEndOf="@+id/flowers" />
+
+        <Button
+            android:id="@+id/flowers"
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="Цвета"
+            app:layout_constraintBottom_toTopOf="@+id/animals"
+            app:layout_constraintEnd_toStartOf="@+id/obschestvo"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/animals"
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="животные"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/produkt"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <Button
             android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:orientation="horizontal"
-            android:text="Назад" />
+            android:layout_margin="10dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="4dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:text="Назад"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-    </LinearLayout>
-
-
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>
