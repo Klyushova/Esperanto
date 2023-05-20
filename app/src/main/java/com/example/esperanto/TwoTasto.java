@@ -43,47 +43,56 @@ public class TwoTasto extends  Grammari{
     private String Osnov[][] = null;
     SharedPreferences sharedPreferences;
 
-    private final String PREDLOG = "PREDL";
-    private final String VOPROS = "VOPROSS";
-    private final String MEST = "MESTOM";
-    private final String CHISLIT = "CHISL";
-    private final String PRISTAV = "PRISTV";
-    private final String COWW = "COW";
-    private final String CYW = "CYWW";
+    private static final String PREDLOG = "PREDL";
+    private static final String VOPROS = "VOPROSS";
+    private static final String MEST = "MESTOM";
+    private static final String CHISLIT = "CHISL";
+    private static final String PRISTAV = "PRISTV";
+    private static final String COWW = "COW";
+    private static final String CYW = "CYWW";
+    private static String SHARE = "";
+    public static final String APP_PREFERENCES = "mysettings";
     public static Intent newInstance(Context context) {
         return new Intent(context, TwoTasto.class);
     }
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-
+        sharedPreferences = getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);
         super.onCreate(savedInstanceState);
         binding = TwoTastoBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         if(i == TextGrammar.PREDL){
+            SHARE = PREDLOG;
             Pred();
             Nopred();
         }
 
         else{
             if(i == TextGrammar.VOPROSS){
+                SHARE = VOPROS;
                 Osnov = Vopross.clone();
             }
             else if(i == TextGrammar.MESTOIM){
+                SHARE = MEST;
                 Osnov = Mest.clone();
             }
             else if(i == TextGrammar.CHISL){
+                SHARE = CHISLIT;
                 Osnov = Chisl.clone();
 
             }
             else if(i == TextGrammar.PRISTV){
+                SHARE =PRISTAV;
                 Osnov = Pristv.clone();
 
             }
             else if (i == TextGrammar.COW){
+                SHARE = COWW;
                 Osnov = Cow.clone();
 
             }
             else if(i == TextGrammar.CYWW){
+                SHARE = CYW;
                 Osnov = Cyww.clone();
 
             }
@@ -95,6 +104,20 @@ public class TwoTasto extends  Grammari{
     private  void TascoVopr(){
         t +=1;
         if (t > 10){
+            if (sharedPreferences.contains(SHARE)) {
+                String resultititi = sharedPreferences.getString(SHARE,"");
+                if(TrueResult > Integer.parseInt(resultititi)){
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString(SHARE, String.valueOf(TrueResult));
+                    editor.apply();
+                }
+            }
+            else {
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString(SHARE, String.valueOf(TrueResult));
+                editor.apply();
+            }
+            binding.result.setText(sharedPreferences.getString(SHARE, ""));
             binding.lm.setVisibility(View.GONE);
             binding.vopross.setText("Урок пройден");
         }
@@ -134,6 +157,19 @@ public class TwoTasto extends  Grammari{
     private void Nopred(){
         t ++;
         if (j > 8){
+            if (sharedPreferences.contains(SHARE)) {
+                String resultititi = sharedPreferences.getString(SHARE,"");
+                if(TrueResult > Integer.parseInt(resultititi)){
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString(SHARE, String.valueOf(TrueResult));
+                    editor.apply();
+                }
+            }
+            else {
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString(SHARE, String.valueOf(TrueResult));
+                editor.apply();
+            }
             binding.lm.setVisibility(View.GONE);
             binding.answertasto.setText("Урок пройден");
         }

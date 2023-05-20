@@ -21,6 +21,9 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(Texti.newInstance(this)));
         binding.grammar.setOnClickListener(view ->
                 startActivity(Grammari.newInstance(this)));
+        binding.result.setOnClickListener(view -> {
+
+        });
     }
 
 }

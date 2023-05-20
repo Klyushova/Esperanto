@@ -20,6 +20,9 @@ public class WordTasto extends AppCompatActivity {
     private int TrueResult;
     private int t = 0;
 
+    private static String SHARE = MenuWord.SHARE;
+    public static final String APP_PREFERENCES = "mysettings";
+
     public static Intent newInstance(Context context) {
         return new Intent(context, WordTasto.class);
     }
