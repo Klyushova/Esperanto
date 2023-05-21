@@ -42,7 +42,7 @@ public class TwoTasto extends  Grammari{
 
     private String Predl[] = {"sub", "inter", "en", "ekster", "apud", "antau", "al", "kun", "dum", "el"};
     private String Osnov[][] = null;
-    SharedPreferences sharedPreferences;
+    public SharedPreferences sharedPreferences;
 
     private static final String PREDLOG = "PREDL";
     private static final String VOPROS = "VOPROSS";
@@ -58,11 +58,12 @@ public class TwoTasto extends  Grammari{
     }
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        sharedPreferences = getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences(APP_PREFERENCES, MODE_PRIVATE);
         super.onCreate(savedInstanceState);
         binding = TwoTastoBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         if(i == TextGrammar.PREDL){
+            binding.vopross.setText("Напишите слово, которое подходит к этому вопросу.");
             SHARE = PREDLOG;
             Pred();
             Nopred();
@@ -70,29 +71,35 @@ public class TwoTasto extends  Grammari{
 
         else{
             if(i == TextGrammar.VOPROSS){
+                binding.vopross.setText("Напишите предлог, который соответствует картинке.");
                 SHARE = VOPROS;
                 Osnov = Vopross.clone();
             }
             else if(i == TextGrammar.MESTOIM){
+                binding.vopross.setText("Напишите местоимение на эсперанто, который соответствует переводу на русском.");
                 SHARE = MEST;
                 Osnov = Mest.clone();
             }
             else if(i == TextGrammar.CHISL){
+                binding.vopross.setText("Напишите число словами на эсперанто.");
                 SHARE = CHISLIT;
                 Osnov = Chisl.clone();
 
             }
             else if(i == TextGrammar.PRISTV){
+                binding.vopross.setText("Напишите приставку, которая есть в этом слове.");
                 SHARE =PRISTAV;
                 Osnov = Pristv.clone();
 
             }
             else if (i == TextGrammar.COW){
+                binding.vopross.setText("Напишите союз на эсперанто, который соответствует переводу на русском.");
                 SHARE = COWW;
                 Osnov = Cow.clone();
 
             }
             else if(i == TextGrammar.CYWW){
+                binding.vopross.setText("Напишите суффикс, который есть в этом слове.");
                 SHARE = CYW;
                 Osnov = Cyww.clone();
 
@@ -125,7 +132,6 @@ public class TwoTasto extends  Grammari{
                 editor.putString(SHARE, String.valueOf(TrueResult));
                 editor.apply();
             }
-            binding.result.setText(sharedPreferences.getString(SHARE, ""));
             binding.lm.setVisibility(View.GONE);
             binding.vopross.setText("Урок пройден");
         }

@@ -47,10 +47,12 @@ public class FirstTasto extends Grammari {
         binding = FirstTastoBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         if (i == TextGrammar.PARTOY) {
+            binding.vopross.setText("Какая часть речи?");
             SHARE = "PARTOY";
             TastojPartoj();
             onChastiR();
         } else if (i == TextGrammar.LA) {
+            binding.vopross.setText("Нужно ли здесь La?");
             SHARE = "LA";
             TascoLa();
             laOrNot();
@@ -158,19 +160,7 @@ public class FirstTasto extends Grammari {
     private void TascoLa() {
         t += 1;
         if (t > 10) {
-            if (sharedPreferences.contains(SHARE)) {
-                String resultititi = sharedPreferences.getString(SHARE,"");
-                if(TrueResult > Integer.parseInt(resultititi)){
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putString(SHARE, String.valueOf(TrueResult));
-                    editor.apply();
-                }
-            }
-            else {
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString(SHARE, String.valueOf(TrueResult));
-                editor.apply();
-            }
+            ResCopy.Sharid(SHARE, TrueResult);
             binding.lB.setVisibility(View.GONE);
             binding.answertasto.setText("Урок пройден");
         } else {

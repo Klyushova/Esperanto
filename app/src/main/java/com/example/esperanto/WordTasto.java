@@ -21,7 +21,9 @@ public class WordTasto extends AppCompatActivity {
     private String answerVo;
     private int TrueResult;
     private int t = 0;
-
+    private int nu
+    private String[][] shared = {{"Семья", "0"}, {"Еда", "0"}, {"Животные", "0"}, {"Цветы", "0"}, {"Мебель", "0"}, {"Школа", "0"}, {"Глаголы", "0"}, {"Погода", "0"},
+            {"Одежда", "0"}, {"Спорт", "0"}, {"Развлечения", "0"}, {"Город", "0"}, {"Чуства", "0"}};
     private static String SHARE = MenuWord.SHARE;
     public static final String APP_PREFERENCES = "mysettings";
     public SharedPreferences sharedPreferences;
@@ -35,6 +37,7 @@ public class WordTasto extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = TwoTastoBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        binding.vopross.setText("Напишите перевод слова на эсперанто");
         Button nexti = (Button) findViewById(R.id.button);
         nexti.setOnClickListener(new Button.OnClickListener() {
             @Override
@@ -51,19 +54,9 @@ public class WordTasto extends AppCompatActivity {
     private void Random(){
         t +=1;
         if (t > 10){
-            if (sharedPreferences.contains(SHARE)) {
-                String resultititi = sharedPreferences.getString(SHARE,"");
-                if(TrueResult > Integer.parseInt(resultititi)){
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putString(SHARE, String.valueOf(TrueResult));
-                    editor.apply();
-                }
-            }
-            else {
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString(SHARE, String.valueOf(TrueResult));
-                editor.apply();
-            }}
+            ResCopy(SHARE, TrueResult);
+            binding.lm.setVisibility(View.GONE);
+            binding.answertasto.setText("Урок пройден");}
         else{
         Random random = new Random();
         int randomWord = random.nextInt(19 - 0) + 0;

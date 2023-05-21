@@ -57,6 +57,11 @@ public class Texti extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) {
             }
         };
+        binding.alf.setOnClickListener(view -> {
+            j = Texti_Texti.ALPHABET;
+            ji = j;
+            startActivity(Alfv.newInstance(this));
+        });
         binding.spinner.setOnItemSelectedListener(itemSelectedListener);
         binding.proda.setOnClickListener(view -> {
             Media media;

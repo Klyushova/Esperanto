@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         binding.grammar.setOnClickListener(view ->
                 startActivity(Grammari.newInstance(this)));
         binding.result.setOnClickListener(view -> {
-
+            startActivity(ResCopy.newInstance(this));
         });
     }
 

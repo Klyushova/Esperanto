@@ -27,6 +27,7 @@ public class Media extends AppCompatActivity {
         binding = TextActivityBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         binding.text.setText(j);
+
        int resID = getResources().getIdentifier(n, "raw", getPackageName());
         mp = MediaPlayer.create(this, resID);
         mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
@@ -51,6 +52,7 @@ public class Media extends AppCompatActivity {
         binding.pause.setEnabled(false);
         binding.stop.setEnabled(false);
     }
+
 
         private void stopPlay(){
             mp.stop();
