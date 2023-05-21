@@ -59,20 +59,5 @@ public class ResCopy extends AppCompatActivity {
         }
 
     }
-    public  void Ret(String SHARE, int TrueResult){
-        if (sharedPreferences.contains(SHARE)) {
-            String resultititi = sharedPreferences.getString(SHARE,"");
-            if(TrueResult > Integer.parseInt(resultititi)){
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString(SHARE, String.valueOf(TrueResult));
-                editor.apply();
-            }
-        }
-        else {
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putString(SHARE, String.valueOf(TrueResult));
-            editor.apply();
-        }
-    }
 
 }

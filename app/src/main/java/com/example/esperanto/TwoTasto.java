@@ -58,10 +58,10 @@ public class TwoTasto extends  Grammari{
     }
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-        sharedPreferences = getSharedPreferences(APP_PREFERENCES, MODE_PRIVATE);
         super.onCreate(savedInstanceState);
         binding = TwoTastoBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        sharedPreferences = getSharedPreferences(APP_PREFERENCES, MODE_PRIVATE);
         if(i == TextGrammar.PREDL){
             binding.vopross.setText("Напишите слово, которое подходит к этому вопросу.");
             SHARE = PREDLOG;

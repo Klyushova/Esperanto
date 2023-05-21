@@ -21,7 +21,7 @@ public class WordTasto extends AppCompatActivity {
     private String answerVo;
     private int TrueResult;
     private int t = 0;
-    private int nu
+
     private String[][] shared = {{"Семья", "0"}, {"Еда", "0"}, {"Животные", "0"}, {"Цветы", "0"}, {"Мебель", "0"}, {"Школа", "0"}, {"Глаголы", "0"}, {"Погода", "0"},
             {"Одежда", "0"}, {"Спорт", "0"}, {"Развлечения", "0"}, {"Город", "0"}, {"Чуства", "0"}};
     private static String SHARE = MenuWord.SHARE;
@@ -33,10 +33,10 @@ public class WordTasto extends AppCompatActivity {
     }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        sharedPreferences = getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);
         super.onCreate(savedInstanceState);
         binding = TwoTastoBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        sharedPreferences = getSharedPreferences(APP_PREFERENCES, MODE_PRIVATE);
         binding.vopross.setText("Напишите перевод слова на эсперанто");
         Button nexti = (Button) findViewById(R.id.button);
         nexti.setOnClickListener(new Button.OnClickListener() {
@@ -54,9 +54,21 @@ public class WordTasto extends AppCompatActivity {
     private void Random(){
         t +=1;
         if (t > 10){
-            ResCopy.Ret(SHARE, TrueResult);
+            if (sharedPreferences.contains(SHARE)) {
+                String resultititi = sharedPreferences.getString(SHARE,"");
+                if(TrueResult > Integer.parseInt(resultititi)){
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString(SHARE, String.valueOf(TrueResult));
+                    editor.apply();
+                }
+            }
+            else {
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString(SHARE, String.valueOf(TrueResult));
+                editor.apply();
+            }
             binding.lm.setVisibility(View.GONE);
-            binding.answertasto.setText("Урок пройден");}
+            binding.vopross.setText("Урок пройден");}
         else{
         Random random = new Random();
         int randomWord = random.nextInt(19 - 0) + 0;

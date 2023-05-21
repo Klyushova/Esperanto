@@ -36,6 +36,7 @@ public class FirstTasto extends Grammari {
     private Button btprover;
     private String answerVo;
     private static String SHARE = "";
+    public static final String APP_PREFERENCES = "mysettings";
 
     public static Intent newInstance(Context context) {
         return new Intent(context, FirstTasto.class);
@@ -46,6 +47,7 @@ public class FirstTasto extends Grammari {
         super.onCreate(savedInstanceState);
         binding = FirstTastoBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        sharedPreferences = getSharedPreferences(APP_PREFERENCES, MODE_PRIVATE);
         if (i == TextGrammar.PARTOY) {
             binding.vopross.setText("Какая часть речи?");
             SHARE = "PARTOY";
@@ -85,7 +87,7 @@ public class FirstTasto extends Grammari {
                 editor.apply();
             }
             binding.lB.setVisibility(View.GONE);
-            binding.answertasto.setText("Урок пройден");
+            binding.vopross.setText("Урок пройден");
         } else {
             Random random = new Random();
             randompatro = random.nextInt(4 - 1) + 1;
@@ -160,7 +162,19 @@ public class FirstTasto extends Grammari {
     private void TascoLa() {
         t += 1;
         if (t > 10) {
-            ResCopy.Sharid(SHARE, TrueResult);
+            if (sharedPreferences.contains(SHARE)) {
+                String resultititi = sharedPreferences.getString(SHARE,"");
+                if(TrueResult > Integer.parseInt(resultititi)){
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString(SHARE, String.valueOf(TrueResult));
+                    editor.apply();
+                }
+            }
+            else {
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString(SHARE, String.valueOf(TrueResult));
+                editor.apply();
+            }
             binding.lB.setVisibility(View.GONE);
             binding.answertasto.setText("Урок пройден");
         } else {
