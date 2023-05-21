@@ -15,7 +15,7 @@ import com.example.esperanto.databinding.ResultBinding;
 import com.example.esperanto.databinding.TwoTastoBinding;
 
 public class ResCopy extends AppCompatActivity {
-    public static SharedPreferences sharedPreferences;
+    public SharedPreferences sharedPreferences;
 
     private ResultBinding binding;
     public static final String APP_PREFERENCES = "mysettings";
@@ -32,6 +32,7 @@ public class ResCopy extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ResultBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        sharedPreferences = getSharedPreferences(APP_PREFERENCES, MODE_PRIVATE);
         Shared();
         Button nexti = (Button) findViewById(R.id.button);
         nexti.setOnClickListener(new Button.OnClickListener() {
@@ -57,6 +58,21 @@ public class ResCopy extends AppCompatActivity {
 
         }
 
+    }
+    public  void Ret(String SHARE, int TrueResult){
+        if (sharedPreferences.contains(SHARE)) {
+            String resultititi = sharedPreferences.getString(SHARE,"");
+            if(TrueResult > Integer.parseInt(resultititi)){
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString(SHARE, String.valueOf(TrueResult));
+                editor.apply();
+            }
+        }
+        else {
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString(SHARE, String.valueOf(TrueResult));
+            editor.apply();
+        }
     }
 
 }

@@ -54,7 +54,7 @@ public class WordTasto extends AppCompatActivity {
     private void Random(){
         t +=1;
         if (t > 10){
-            ResCopy(SHARE, TrueResult);
+            ResCopy.Ret(SHARE, TrueResult);
             binding.lm.setVisibility(View.GONE);
             binding.answertasto.setText("Урок пройден");}
         else{
